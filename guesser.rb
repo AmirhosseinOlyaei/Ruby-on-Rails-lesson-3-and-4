@@ -6,90 +6,90 @@
 
 
 # v2
-# def guesser
-#   puts "Think of a number between 1 and 100, and I'll try to guess it."
+def guesser
+  puts "Think of a number between 1 and 100, and I'll try to guess it."
 
-#   low = 1
-#   high = 100
+  low = 1
+  high = 100
 
-#   loop do
-#     guess = (low + high) / 2
-#     puts "Is your number #{guess}? (too low/too high/correct)"
-#     response = gets.chomp.downcase
+  loop do
+    guess = (low + high) / 2
+    puts "Is your number #{guess}? Enter: 'too low', 'too high', or 'correct' (then hit enter)."
+    response = gets.chomp.downcase
 
-#     case response
-#     when "too low"
-#       if guess >= high
-#         puts "You're lying! I guessed #{guess}, and you said it was too low. This is impossible."
-#         break
-#       end
-#       low = guess + 1
-#     when "too high"
-#       if guess <= low
-#         puts "You're lying! I guessed #{guess}, and you said it was too high. This is impossible."
-#         break
-#       end
-#       high = guess - 1
-#     when "correct"
-#       puts "Yay! I guessed it right. Your number is #{guess}."
-#       break
-#     else
-#       puts "Please respond with 'too low', 'too high', or 'correct'."
-#     end
+    case response
+    when "too low"
+      if guess >= high
+        puts "You're lying! I guessed #{guess}, and you said it was too low. This is impossible."
+        break
+      end
+      low = guess + 1
+    when "too high"
+      if guess <= low
+        puts "You're lying! I guessed #{guess}, and you said it was too high. This is impossible."
+        break
+      end
+      high = guess - 1
+    when "correct"
+      puts "Yay! I guessed it right. Your number is #{guess}."
+      break
+    else
+      puts "Please respond with 'too low', 'too high', or 'correct'."
+    end
 
-#     if low > high
-#       puts "You're lying! There are no numbers left to guess."
-#       break
-#     end
-#   end
+    if low > high
+      puts "You're lying! There are no numbers left to guess."
+      break
+    end
+  end
 
-#   puts "Do you want to play again? (yes/no)"
-#   answer = gets.chomp.downcase
-#   if answer == "yes" || answer == "y"
-#     guesser
-#   else
-#     puts "Thank you for playing!"
-#   end
-# end
+  puts "Do you want to play again? (yes/no)"
+  answer = gets.chomp.downcase
+  if answer == "yes" || answer == "y"
+    guesser
+  else
+    puts "Thank you for playing!"
+  end
+end
 
-# guesser
+guesser
 
 
 
 #v1
-def guesser
-  puts "Think of a number between 1 and 100.  On each guess, enter:"
-  puts "  'l' if the guess is too low"
-  puts "  'h' if the guess is too high"
-  puts "  'c' if the guess is correct"
-  puts "  'quit' if you want to quit"
-  puts
-  input = nil
-  min = 1
-  max = 100
-  while true
-    guess = (min + max) / 2
-    print "Is your number #{guess}? "
-    input = gets.chomp
-    if input == "l"
-      min = guess + 1
+# def guesser
+#   puts "Think of a number between 1 and 100.  On each guess, enter:"
+#   puts "  'l' if the guess is too low"
+#   puts "  'h' if the guess is too high"
+#   puts "  'c' if the guess is correct"
+#   puts "  'quit' if you want to quit"
+#   puts
+#   input = nil
+#   min = 1
+#   max = 100
+#   while true
+#     guess = (min + max) / 2
+#     print "Is your number #{guess}? "
+#     input = gets.chomp
+#     if input == "l"
+#       min = guess + 1
 
-    elsif input == "h"
-      max = guess - 1
+#     elsif input == "h"
+#       max = guess - 1
 
-    elsif input == "c"
-      puts "Yay!"
-      break
+#     elsif input == "c"
+#       puts "Yay!"
+#       break
 
-    elsif input == "quit"
-      puts "Quitting..."
-      break
+#     elsif input == "quit"
+#       puts "Quitting..."
+#       break
 
-    else
-      puts "I didn't understand that answer."
+#     else
+#       puts "I didn't understand that answer."
 
 
-    end
-  end
-end
-guesser
+#     end
+#   end
+# end
+# guesser
